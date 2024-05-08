@@ -2,7 +2,7 @@
 
 Official repository for the paper "MoVA: Adapting Mixture of Vision Experts to Multimodal Context".
 
-<!-- [[📖 Paper](https://arxiv.org/pdf/2404.pdf)]  -->
+[[📖 Paper](https://arxiv.org/pdf/2404.13046)] 
 
 
 ## 💥 News
@@ -45,7 +45,7 @@ If you find **MoVA** useful for your research and applications, please kindly ci
 @article{zong2024mova,
   title={MoVA: Adapting Mixture of Vision Experts to Multimodal Context},
   author={Zong, Zhuofan and Ma, Bingqi and Shen, Dazhong and Song, Guanglu and Shao, Hao and Jiang, Dongzhi and Li, Hongsheng and Liu, Yu},
-  journal={arXiv},
+  journal={arXiv preprint arXiv:2404.13046},
   year={2024}
 }
 ```
