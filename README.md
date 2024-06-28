@@ -2,15 +2,13 @@
 
 Official repository for the paper "MoVA: Adapting Mixture of Vision Experts to Multimodal Context".
 
-[[📖 Paper](https://arxiv.org/pdf/2404.13046)] 
-
+[[📖 Paper](https://huggingface.co/papers/2404.13046)] [[🤗 Huggingface Model](https://huggingface.co/zongzhuofan/llama3-mova-8b)]
 
 ## 💥 News
 
+- **[2024.06.28]** 🔥 We release the codes and the MoVA-8B model.
 - **[2024.04.22]** 🚀 We release our paper on arXiv.
 
-## 📌 TODO
-- [ ] Release training code and models.
 
 ## 👀 About MoVA
 
@@ -20,15 +18,41 @@ To alleviate the bias of CLIP vision encoder, we first delve into the inherent b
 
 MoVA consists of two stages: coarse-grained context-ware expert routing and fine-grained expert fusion with MoV-Adapter.
 1. **Coarse-grained context-ware expert routing**: 
-First, MoVA leverages the tool-use capabilities of LLM, routing the most appropriate experts from $N$ expert candidates via LLM to help the model answer the user's question. We incorporate the expert-routing LoRA module into the LLM to improve the efficiency and effectiveness of expert routing.
-This expert-routing LoRA module is trained with expert routing annotations and can better align the LLM and the routing task.
+First, MoVA leverages the tool-use capabilities of LLM and aims to employ LLM to select vision experts with strong relevance to the user's image and instruction from the expert model pool. Thanks to the strong generalization ability of LLM, we also can perform model routing for vision experts in open scenarios.
+
 2. **Fine-grained expert fusion with MoV-Adapter**: 
 In the second stage, we turn to enhance the visual representation with a novel MoV-Adapter module in a fine-grained manner.
 More specifically, we leverage the cross-attention mechanism to extract the task-specific knowledge of representations from chosen experts.
 Meanwhile, the dynamic gating network in MoV-Adapter can allocate soft weights to the extracted knowledge of each expert according to the input image and instruction.
 Then the extracted knowledge can be effectively integrated into the foundational representation of the base vision encoder.
 
-MoVA with **Vicuna-7B** and **Hermes-Yi-34B** can achieve significant performance gains over current state-of-the-art methods in a wide range of challenging benchmarks.
+MoVA with **Vicuna-7B**, **Llama3-8B** and **Hermes-Yi-34B** can achieve significant performance gains over current state-of-the-art methods in a wide range of challenging benchmarks.
+
+## 🤖 Model Zoo
+
+### MultiModal Benchmark
+
+| Name | LLM | \#Tokens | MME | MMBench | MMBench-CN | QBench | MathVista | MathVerse | POPE |
+|---|---|---|---|---|---|---|---|---|---|
+| [MoVA-8B](https://huggingface.co/zongzhuofan/llama3-mova-8b) | Llama3-8B | 576 | 1595.8 / 347.5 | 75.3 | 67.7 | 70.8 | 37.7 | 21.4 | 89.3 |
+
+### General & Text-oriented VQA
+
+| Name | LLM | \#Tokens | VQAv2 | GQA | SQA | TextVQA | ChartQA | DocVQA | AI2D |
+|---|---|---|---|---|---|---|---|---|---|
+| [MoVA-8B](https://huggingface.co/zongzhuofan/llama3-mova-8b) | Llama3-8B | 576 | 83.5 | 65.2 | 74.7 | 77.1 | 70.5 | 83.4 | 77.0 |
+
+### Visual Grounding
+
+ Name | LLM | \#Tokens | RefCOCO<br>(val) | RefCOCO<br>(testA) | RefCOCO<br>(testB) | RefCOCO+<br>(val) | RefCOCO+<br>(testA) | RefCOCO+<br>(testB) | RefCOCO&#8209;g<br>(val) | RefCOCO&#8209;g<br>(test) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| [MoVA-8B](https://huggingface.co/zongzhuofan/llama3-mova-8b) | Llama3-8B | 576 | 92.18 | 94.75 | 88.24 | 88.45 | 92.21 | 82.82 | 90.05 | 90.23 |
+
+## 💡 Evaluation
+
+To ensure the reproducibility, we evaluate the models with greedy decoding. We do not evaluate using beam search to make the inference process consistent with the chat demo of real-time outputs.
+
+We follow the evaluation settings of [LLaVA](https://github.com/haotian-liu/LLaVA). Please see [Evaluation.md](https://github.com/TempleX98/MoVA/blob/main/docs/Evaluation.md).
 
 ## 🧠 Acknowledgement
 
