@@ -32,15 +32,15 @@ MoVA with **Vicuna-7B**, **Llama3-8B** and **Hermes-Yi-34B** can achieve signifi
 
 ### MultiModal Benchmark
 
-| Name | LLM | \#Tokens | MME | MMBench | MMBench-CN | QBench | MathVista | MathVerse | POPE |
+| Name | LLM | \#Tokens | MME | MMBench | MMBench-CN | QBench<br>(dev) | MathVista | MathVerse | POPE |
 |---|---|---|---|---|---|---|---|---|---|
 | [MoVA-8B](https://huggingface.co/zongzhuofan/llama3-mova-8b) | Llama3-8B | 576 | 1595.8 / 347.5 | 75.3 | 67.7 | 70.8 | 37.7 | 21.4 | 89.3 |
 
 ### General & Text-oriented VQA
 
-| Name | LLM | \#Tokens | VQAv2 | GQA | SQA | TextVQA | ChartQA | DocVQA | AI2D |
-|---|---|---|---|---|---|---|---|---|---|
-| [MoVA-8B](https://huggingface.co/zongzhuofan/llama3-mova-8b) | Llama3-8B | 576 | 83.5 | 65.2 | 74.7 | 77.1 | 70.5 | 83.4 | 77.0 |
+| Name | LLM | \#Tokens | VQAv2 | GQA | SQA | TextVQA | ChartQA | DocVQA<br>(val) | DocVQA<br>(test) | AI2D |
+|---|---|---|---|---|---|---|---|---|---|---|
+| [MoVA-8B](https://huggingface.co/zongzhuofan/llama3-mova-8b) | Llama3-8B | 576 | 83.5 | 65.2 | 74.7 | 77.1 | 70.5 | 83.8 | 83.4 | 77.0 |
 
 ### Visual Grounding
 

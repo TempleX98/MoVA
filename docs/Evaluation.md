@@ -1,6 +1,6 @@
 # Evaluation
 
-In MoVA, we evaluate models on a diverse set of 12 benchmarks. To ensure the reproducibility, we evaluate the models with greedy decoding. We do not evaluate using beam search to make the inference process consistent with the chat demo of real-time outputs.
+To ensure the reproducibility, we evaluate the models with greedy decoding. We do not evaluate using beam search to make the inference process consistent with the chat demo of real-time outputs.
 
 Currently, we mostly utilize the official toolkit or server for the evaluation.
 
